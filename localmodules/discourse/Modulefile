@@ -1,0 +1,3 @@
+name 'huskycode-discourse'
+version '0.0.1'
+#dependency 'puppetlabs/mysql', '1.2.3'

@@ -1,6 +1,10 @@
 forge "http://forge.puppetlabs.com"
 
 mod 'puppetlabs/stdlib'
+mod 'puppetlabs/postgresql'
+mod 'puppetlabs/apt'
+mod 'puppetlabs/nginx'
+mod 'maestrodev/rvm'
 
 # mod 'ntp',
 #   :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git'

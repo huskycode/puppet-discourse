@@ -21,6 +21,7 @@ class discourse {
 
   postgresql::database_user{'discourse':
     password_hash => $db_password, 
+    require => Class["postgresql::server"],
   }
 
   group { 'discourse': 
@@ -32,7 +33,7 @@ class discourse {
     require => [Group["discourse"]], #, Class["nginx"]],
   }
 
-  file { ["/var/www","/var/www/discourse"]: 
+  file { ["/var/www"]:
     ensure => 'directory',
     owner => 'discourse', 
     group => 'discourse', 
@@ -44,5 +45,27 @@ class discourse {
   rvm_system_ruby { 'ruby-2.0.0':
       ensure => 'present',
       default_use => true,
+      require => Rvm::System_user["discourse"],
   }
+  rvm_gem { ["ruby-2.0.0/bundler"]: 
+    ensure => "1.3.5",
+    require => Rvm_system_ruby["ruby-2.0.0"],
+  }
+
+  vcsrepo { "/var/www/discourse":
+    ensure => present,
+    provider => git,
+    source => "git://github.com/discourse/discourse.git",
+    user => "discourse",
+    revision => "latest-release",
+    require => [User["discourse"],File["/var/www"]]
+  }
+
+  exec { "bundle_install":
+    command => "/usr/local/rvm/bin/rvm 2.0.0 do bundle install --deployment --without test",
+    cwd => "/var/www/discourse", 
+    user => "discourse",
+    logoutput => true,
+    require => Vcsrepo["/var/www/discourse"],
+  }    
 }

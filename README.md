@@ -13,6 +13,8 @@ install discourse on a blank ubuntu machine.
 
 This is not fully working. Yet. The server starts, but not automatically. Still need to complete a few steps. 
 
+* Set up nginx
+* Set up email
 * Need to add a script for bluepill. I am deciding whether we should use upstart instead.
 * Clean up the Execs to be idempotent
 * Make hostname a template variable

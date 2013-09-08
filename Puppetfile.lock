@@ -6,8 +6,6 @@ FORGE
     puppetlabs/apt (1.2.0)
       puppetlabs/stdlib (>= 2.2.1)
     puppetlabs/firewall (0.4.1)
-    puppetlabs/nginx (0.0.1)
-      puppetlabs/stdlib (>= 0.1.6)
     puppetlabs/postgresql (2.4.1)
       puppetlabs/apt (< 2.0.0, >= 1.1.0)
       puppetlabs/firewall (>= 0.0.4)
@@ -16,6 +14,14 @@ FORGE
     puppetlabs/stdlib (4.1.0)
     puppetlabs/vcsrepo (0.1.2)
     ripienaar/concat (0.2.0)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-nginx.git
+  ref: master
+  sha: 1441edcfac8d2c6e12488c3867624e38e5532e4c
+  specs:
+    puppetlabs/nginx (0.0.1)
+      puppetlabs/stdlib (>= 0.1.6)
 
 DEPENDENCIES
   maestrodev/rvm (>= 0)

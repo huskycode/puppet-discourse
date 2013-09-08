@@ -1,7 +1,7 @@
 sudo apt-get -y install git
 
-wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb
-sudo dpkg -i puppetlabs-release-precise.deb
+curl -o /tmp/puppetlabs-release-precise.deb http://apt.puppetlabs.com/puppetlabs-release-precise.deb
+sudo dpkg -i /tmp/puppetlabs-release-precise.deb
 sudo apt-get update
 
 sudo apt-get -y install puppet

@@ -3,7 +3,8 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/stdlib'
 mod 'puppetlabs/postgresql'
 mod 'puppetlabs/apt'
-mod 'puppetlabs/nginx'
+mod 'puppetlabs/nginx',
+    :git => 'https://github.com/puppetlabs/puppetlabs-nginx.git'
 mod 'maestrodev/rvm'
 mod 'puppetlabs/vcsrepo'
 

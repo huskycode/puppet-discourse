@@ -15,9 +15,7 @@ This is not fully working. Yet. The server starts, but not automatically. Still 
 
 * Set up nginx (adding server_names_hash_bucket_size 64; to http section)
 * Set up email
-* Need to add a script for bluepill. I am deciding whether we should use upstart instead.
 * Clean up the Execs to be idempotent
-* Make hostname a template variable
 * Have an instruction on how to configure a secure password
 
 How to use
